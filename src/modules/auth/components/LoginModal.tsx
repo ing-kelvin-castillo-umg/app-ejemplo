@@ -32,12 +32,15 @@ export const LoginModal: React.FC = () => {
   };
 
   return (
-    <div className="fixed inset-0 z-[99999] flex items-center justify-center p-4">
-      {/* Fondo oscuro flotante con Blur sobre toda la ventana */}
-      <div className="fixed inset-0 bg-slate-900/60 backdrop-blur-sm" onClick={closeLoginModal} />
+    <div className="fixed inset-0 z-[99999] w-screen h-screen flex items-center justify-center p-4">
+      {/* Fondo oscuro flotante con blur cubriendo toda la pantalla */}
+      <div
+        className="fixed inset-0 w-screen h-screen bg-slate-900/60 backdrop-blur-sm"
+        onClick={closeLoginModal}
+      />
 
-      {/* Ventana Modal Centrada */}
-      <div className="relative w-full max-w-md bg-white rounded-2xl shadow-2xl border border-slate-100 overflow-hidden my-auto z-10 animate-in fade-in zoom-in duration-150">
+      {/* Tarjeta Modal Flotante en el Centro Exacto */}
+      <div className="relative w-full max-w-md bg-white rounded-2xl shadow-2xl border border-slate-100 overflow-hidden z-10 animate-in fade-in zoom-in duration-150">
         
         {/* Header del Modal */}
         <div className="flex items-center justify-between px-6 py-4 border-b border-slate-100 bg-slate-50/50">
