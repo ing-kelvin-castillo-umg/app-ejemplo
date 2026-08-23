@@ -125,7 +125,7 @@ export const LoginModal: React.FC = () => {
           <button
             type="submit"
             disabled={isLoading}
-            className="w-full py-3.5 px-6 bg-indigo-600 hover:bg-indigo-700 text-white text-sm font-semibold rounded-xl shadow-sm transition-all flex items-center justify-center gap-2.5 disabled:opacity-50"
+            className="w-full py-6 px-6 bg-indigo-600 hover:bg-indigo-700 text-white text-sm font-semibold rounded-xl shadow-sm transition-all flex items-center justify-center gap-2.5 disabled:opacity-50"
           >
             {isLoading ? (
               <>

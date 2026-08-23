@@ -226,14 +226,14 @@ export const ClientModal: React.FC<ClientModalProps> = ({
             <button
               type="button"
               onClick={onClose}
-              className="px-6 py-3.5 text-sm font-semibold text-slate-600 bg-slate-100 hover:bg-slate-200 rounded-xl transition-colors"
+              className="px-6 py-6 text-sm font-semibold text-slate-600 bg-slate-100 hover:bg-slate-200 rounded-xl transition-colors"
             >
               Cancelar
             </button>
             <button
               type="submit"
               disabled={isSaving}
-              className="flex items-center gap-2.5 px-6 py-3.5 text-sm font-semibold text-white bg-indigo-600 hover:bg-indigo-700 rounded-xl transition-colors disabled:opacity-50 shadow-sm"
+              className="flex items-center gap-2.5 px-6 py-6 text-sm font-semibold text-white bg-indigo-600 hover:bg-indigo-700 rounded-xl transition-colors disabled:opacity-50 shadow-sm"
             >
               {isSaving ? (
                 <Loader2 className="w-4 h-4 animate-spin" />

@@ -67,13 +67,13 @@ export const ConfirmModal: React.FC<ConfirmModalProps> = ({
           <div className="flex items-center justify-end space-x-2 pt-2">
             <button
               onClick={onCancel}
-              className="px-6 py-3.5 text-sm font-semibold text-slate-600 bg-slate-100 hover:bg-slate-200 rounded-xl transition-colors"
+              className="px-6 py-6 text-sm font-semibold text-slate-600 bg-slate-100 hover:bg-slate-200 rounded-xl transition-colors"
             >
               {cancelLabel}
             </button>
             <button
               onClick={onConfirm}
-              className={`px-6 py-3.5 text-sm font-semibold text-white rounded-xl transition-colors ${
+              className={`px-6 py-6 text-sm font-semibold text-white rounded-xl transition-colors ${
                 danger
                   ? 'bg-red-600 hover:bg-red-700'
                   : 'bg-amber-500 hover:bg-amber-600'
