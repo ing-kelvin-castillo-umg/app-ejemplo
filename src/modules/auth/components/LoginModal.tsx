@@ -32,18 +32,40 @@ export const LoginModal: React.FC = () => {
   };
 
   return (
-    <div className="fixed inset-0 z-[99999] w-screen h-screen flex items-center justify-center p-4">
-      {/* Fondo oscuro flotante con blur cubriendo toda la pantalla */}
+    <div
+      style={{
+        position: 'fixed',
+        top: 0,
+        left: 0,
+        right: 0,
+        bottom: 0,
+        zIndex: 99999,
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        padding: '1rem',
+        backgroundColor: 'rgba(15, 23, 42, 0.65)',
+        backdropFilter: 'blur(4px)',
+        WebkitBackdropFilter: 'blur(4px)',
+      }}
+      onClick={closeLoginModal}
+    >
       <div
-        className="fixed inset-0 w-screen h-screen bg-slate-900/60 backdrop-blur-sm"
-        onClick={closeLoginModal}
-      />
-
-      {/* Tarjeta Modal Flotante en el Centro Exacto */}
-      <div className="relative w-full max-w-md bg-white rounded-2xl shadow-2xl border border-slate-100 overflow-hidden z-10 animate-in fade-in zoom-in duration-150">
-        
+        style={{
+          position: 'relative',
+          width: '100%',
+          maxWidth: '28rem',
+          backgroundColor: '#ffffff',
+          borderRadius: '1rem',
+          boxShadow: '0 25px 50px -12px rgba(0,0,0,0.35)',
+          border: '1px solid #f1f5f9',
+          overflow: 'hidden',
+          zIndex: 1,
+        }}
+        onClick={(e) => e.stopPropagation()}
+      >
         {/* Header del Modal */}
-        <div className="flex items-center justify-between px-6 py-4 border-b border-slate-100 bg-slate-50/50">
+        <div className="flex items-center justify-between px-6 py-4 border-b border-slate-100 bg-slate-50">
           <div className="flex items-center space-x-2">
             <div className="p-2 bg-indigo-50 text-indigo-600 rounded-lg">
               <Lock className="w-5 h-5" />
@@ -103,7 +125,7 @@ export const LoginModal: React.FC = () => {
           <button
             type="submit"
             disabled={isLoading}
-            className="w-full py-3 px-4 bg-indigo-600 hover:bg-indigo-700 text-white font-medium rounded-xl shadow-sm hover:shadow transition-all flex items-center justify-center space-x-2 disabled:opacity-50"
+            className="w-full py-3 px-4 bg-indigo-600 hover:bg-indigo-700 text-white font-medium rounded-xl shadow-sm transition-all flex items-center justify-center space-x-2 disabled:opacity-50"
           >
             {isLoading ? (
               <>
@@ -115,7 +137,6 @@ export const LoginModal: React.FC = () => {
             )}
           </button>
 
-          {/* Accesos Limpios de Preset */}
           <div className="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between text-[11px] text-slate-400">
             <span>Perfil rápido:</span>
             <div className="flex space-x-2">
@@ -136,7 +157,6 @@ export const LoginModal: React.FC = () => {
             </div>
           </div>
         </form>
-
       </div>
     </div>
   );
