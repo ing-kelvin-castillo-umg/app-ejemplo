@@ -1,0 +1,18 @@
+[
+  {
+    "usr_id": "usr_01",
+    "usr_email": "admin@empresa.com",
+    "usr_pass": "admin123",
+    "usr_full_name": "Carlos Administración",
+    "usr_role_code": "ADMIN",
+    "usr_is_active": true
+  },
+  {
+    "usr_id": "usr_02",
+    "usr_email": "user@empresa.com",
+    "usr_pass": "user123",
+    "usr_full_name": "Laura Consulta",
+    "usr_role_code": "LIMITED",
+    "usr_is_active": true
+  }
+]

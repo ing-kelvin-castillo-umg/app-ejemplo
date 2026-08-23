@@ -1,0 +1,80 @@
+[
+  {
+    "prod_id": "p001",
+    "prod_code": "HER-001",
+    "prod_name": "Taladro Inalámbrico 20V DeWalt",
+    "prod_category": "Herramientas",
+    "prod_price_sell": 145.00,
+    "prod_price_buy": 95.00,
+    "prod_stock": 18,
+    "prod_min_stock": 5,
+    "prod_unit": "Unidad",
+    "prod_description": "Taladro percutor inalámbrico con 2 baterías de litio y cargador rápido.",
+    "prod_img": "https://images.unsplash.com/photo-1504148455328-c376907d081c?auto=format&fit=crop&w=600&q=80"
+  },
+  {
+    "prod_id": "p002",
+    "prod_code": "HER-002",
+    "prod_name": "Juego de Destornilladores Stanley (10 Piezas)",
+    "prod_category": "Herramientas",
+    "prod_price_sell": 24.50,
+    "prod_price_buy": 14.00,
+    "prod_stock": 42,
+    "prod_min_stock": 10,
+    "prod_unit": "Juego",
+    "prod_description": "Set de destornilladores de cromo vanadio con punta magnética.",
+    "prod_img": "https://images.unsplash.com/photo-1581147036324-c17ac41dfa6c?auto=format&fit=crop&w=600&q=80"
+  },
+  {
+    "prod_id": "p003",
+    "prod_code": "PIN-001",
+    "prod_name": "Pintura Látex Blanca Cubeta 5 Galones",
+    "prod_category": "Pinturas",
+    "prod_price_sell": 68.00,
+    "prod_price_buy": 45.00,
+    "prod_stock": 12,
+    "prod_min_stock": 4,
+    "prod_unit": "Cubeta",
+    "prod_description": "Pintura lavable para interiores y exteriores con acabado mate.",
+    "prod_img": "https://images.unsplash.com/photo-1589939705384-5185137a7f0f?auto=format&fit=crop&w=600&q=80"
+  },
+  {
+    "prod_id": "p004",
+    "prod_code": "PLO-001",
+    "prod_name": "Tubo PVC de Agua Potable 1/2 pulgada (6 metros)",
+    "prod_category": "Plomería",
+    "prod_price_sell": 8.50,
+    "prod_price_buy": 4.80,
+    "prod_stock": 3,
+    "prod_min_stock": 15,
+    "prod_unit": "Tubo",
+    "prod_description": "Tubo de PVC rígido alta presión para agua fría.",
+    "prod_img": "https://images.unsplash.com/photo-1607472586893-edb57bdc0e39?auto=format&fit=crop&w=600&q=80"
+  },
+  {
+    "prod_id": "p005",
+    "prod_code": "ELE-001",
+    "prod_name": "Cable Eléctrico THHN Calibre 12 (Rollo 100m)",
+    "prod_category": "Electricidad",
+    "prod_price_sell": 89.90,
+    "prod_price_buy": 60.00,
+    "prod_stock": 8,
+    "prod_min_stock": 3,
+    "prod_unit": "Rollo",
+    "prod_description": "Cable de cobre suave con aislamiento termoplástico resistente al calor.",
+    "prod_img": "https://images.unsplash.com/photo-1544724569-5f546fd6f2b5?auto=format&fit=crop&w=600&q=80"
+  },
+  {
+    "prod_id": "p006",
+    "prod_code": "CON-001",
+    "prod_name": "Cemento Gris Portland (Saco 42.5kg)",
+    "prod_category": "Construcción",
+    "prod_price_sell": 11.50,
+    "prod_price_buy": 8.50,
+    "prod_stock": 120,
+    "prod_min_stock": 30,
+    "prod_unit": "Saco",
+    "prod_description": "Cemento de alta resistencia para estructuras de concreto y acabados.",
+    "prod_img": "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=600&q=80"
+  }
+]
