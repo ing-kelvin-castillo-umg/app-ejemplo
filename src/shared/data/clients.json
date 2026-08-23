@@ -1,0 +1,52 @@
+[
+  {
+    "id": "c001",
+    "fullName": "Carlos Morales Fuentes",
+    "email": "carlos.morales@gmail.com",
+    "phone": "5534-2210",
+    "address": "Zona 1, Ciudad de Guatemala",
+    "nit": "1234567-8",
+    "isActive": true,
+    "createdAt": "2025-01-15T10:00:00Z"
+  },
+  {
+    "id": "c002",
+    "fullName": "Marta Elena López",
+    "email": "marta.lopez@outlook.com",
+    "phone": "4422-9901",
+    "address": "Zona 7, Mixco",
+    "nit": "9876543-2",
+    "isActive": true,
+    "createdAt": "2025-02-03T08:30:00Z"
+  },
+  {
+    "id": "c003",
+    "fullName": "Constructora Los Álamos S.A.",
+    "email": "info@losalamos.com",
+    "phone": "2200-4455",
+    "address": "Carretera a El Salvador km 14.5",
+    "nit": "3344556-7",
+    "isActive": true,
+    "createdAt": "2025-03-10T14:00:00Z"
+  },
+  {
+    "id": "c004",
+    "fullName": "Roberto Ajú Ajú",
+    "email": "roberto.aju@yahoo.com",
+    "phone": "5678-3311",
+    "address": "Zona 18, Guatemala",
+    "nit": "7788990-1",
+    "isActive": false,
+    "createdAt": "2025-04-22T09:15:00Z"
+  },
+  {
+    "id": "c005",
+    "fullName": "Ferretería El Tornillo",
+    "email": "compras@eltornillo.gt",
+    "phone": "2266-8800",
+    "address": "Zona 3, Quetzaltenango",
+    "nit": "5566778-0",
+    "isActive": true,
+    "createdAt": "2025-05-01T11:45:00Z"
+  }
+]
