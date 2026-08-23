@@ -3,7 +3,6 @@
 import React from 'react';
 import { Header } from '@/modules/public/components/Header';
 import { Footer } from '@/modules/public/components/Footer';
-import { LoginModal } from '@/modules/auth/components/LoginModal';
 
 export default function PublicLayout({
   children,
@@ -15,7 +14,6 @@ export default function PublicLayout({
       <Header />
       <main className="flex-grow">{children}</main>
       <Footer />
-      <LoginModal />
     </div>
   );
 }

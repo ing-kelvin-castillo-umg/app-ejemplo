@@ -1,7 +1,6 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
-import { createPortal } from 'react-dom';
+import React, { useState } from 'react';
 import { useAuth } from '../context/AuthContext';
 import { useRouter } from 'next/navigation';
 import { X, Lock, Mail, AlertCircle, Loader2 } from 'lucide-react';
@@ -9,16 +8,11 @@ import { X, Lock, Mail, AlertCircle, Loader2 } from 'lucide-react';
 export const LoginModal: React.FC = () => {
   const { isLoginModalOpen, closeLoginModal, login, isLoading, loginError } = useAuth();
   const router = useRouter();
-  const [mounted, setMounted] = useState<boolean>(false);
 
   const [email, setEmail] = useState<string>('');
   const [password, setPassword] = useState<string>('');
 
-  useEffect(() => {
-    setMounted(true);
-  }, []);
-
-  if (!isLoginModalOpen || !mounted) return null;
+  if (!isLoginModalOpen) return null;
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -37,12 +31,12 @@ export const LoginModal: React.FC = () => {
     }
   };
 
-  const modalContent = (
-    <div className="fixed inset-0 z-[99999] flex items-center justify-center p-4 bg-slate-900/60 backdrop-blur-sm">
-      {/* Overlay click para cerrar */}
-      <div className="absolute inset-0" onClick={closeLoginModal} />
+  return (
+    <div className="fixed inset-0 z-[99999] flex items-center justify-center p-4">
+      {/* Fondo oscuro flotante con Blur sobre toda la ventana */}
+      <div className="fixed inset-0 bg-slate-900/60 backdrop-blur-sm" onClick={closeLoginModal} />
 
-      {/* Contenedor Flotante del Modal */}
+      {/* Ventana Modal Centrada */}
       <div className="relative w-full max-w-md bg-white rounded-2xl shadow-2xl border border-slate-100 overflow-hidden my-auto z-10 animate-in fade-in zoom-in duration-150">
         
         {/* Header del Modal */}
@@ -143,6 +137,4 @@ export const LoginModal: React.FC = () => {
       </div>
     </div>
   );
-
-  return createPortal(modalContent, document.body);
 };
