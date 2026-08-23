@@ -1,6 +1,7 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { createPortal } from 'react-dom';
 import { useAuth } from '../context/AuthContext';
 import { useRouter } from 'next/navigation';
 import { X, Lock, Mail, AlertCircle, Loader2 } from 'lucide-react';
@@ -8,11 +9,16 @@ import { X, Lock, Mail, AlertCircle, Loader2 } from 'lucide-react';
 export const LoginModal: React.FC = () => {
   const { isLoginModalOpen, closeLoginModal, login, isLoading, loginError } = useAuth();
   const router = useRouter();
+  const [mounted, setMounted] = useState<boolean>(false);
 
   const [email, setEmail] = useState<string>('');
   const [password, setPassword] = useState<string>('');
 
-  if (!isLoginModalOpen) return null;
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  if (!isLoginModalOpen || !mounted) return null;
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -31,9 +37,13 @@ export const LoginModal: React.FC = () => {
     }
   };
 
-  return (
-    <div className="fixed inset-0 z-[9999] flex items-center justify-center p-4 bg-slate-900/60 backdrop-blur-md overflow-y-auto">
-      <div className="relative w-full max-w-md bg-white rounded-2xl shadow-2xl border border-slate-100 overflow-hidden transform transition-all animate-in fade-in zoom-in duration-200 my-auto">
+  const modalContent = (
+    <div className="fixed inset-0 z-[99999] flex items-center justify-center p-4 bg-slate-900/60 backdrop-blur-sm">
+      {/* Overlay click para cerrar */}
+      <div className="absolute inset-0" onClick={closeLoginModal} />
+
+      {/* Contenedor Flotante del Modal */}
+      <div className="relative w-full max-w-md bg-white rounded-2xl shadow-2xl border border-slate-100 overflow-hidden my-auto z-10 animate-in fade-in zoom-in duration-150">
         
         {/* Header del Modal */}
         <div className="flex items-center justify-between px-6 py-4 border-b border-slate-100 bg-slate-50/50">
@@ -133,4 +143,6 @@ export const LoginModal: React.FC = () => {
       </div>
     </div>
   );
+
+  return createPortal(modalContent, document.body);
 };
