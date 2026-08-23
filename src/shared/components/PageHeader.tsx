@@ -35,12 +35,9 @@ export const PageHeader: React.FC<PageHeaderProps> = ({
       {actionLabel && onAction && (
         <button
           onClick={onAction}
-          className="group flex items-center space-x-2 pl-3 pr-4 py-2.5 bg-indigo-600 hover:bg-indigo-700 active:bg-indigo-800 text-white text-xs font-semibold rounded-xl shadow-sm hover:shadow-indigo-200 hover:shadow-md transition-all duration-150"
+          className="px-5 py-2.5 bg-indigo-600 hover:bg-indigo-700 active:bg-indigo-800 text-white text-xs font-semibold rounded-xl shadow-sm hover:shadow-indigo-200 hover:shadow-md transition-all duration-150"
         >
-          <span className="flex items-center justify-center w-5 h-5 bg-white/20 group-hover:bg-white/30 rounded-lg transition-colors">
-            <Plus className="w-3.5 h-3.5" />
-          </span>
-          <span className="hidden sm:inline">{actionLabel}</span>
+          {actionLabel}
         </button>
       )}
     </div>

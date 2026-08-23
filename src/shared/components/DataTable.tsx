@@ -47,12 +47,12 @@ export function DataTable<T>({
       <div className="overflow-x-auto">
         <table className="w-full text-sm">
           <thead>
-            <tr className="bg-slate-50 border-b border-slate-100">
+            <tr className="bg-indigo-600">
               {columns.map((col) => (
                 <th
                   key={col.key}
                   className={[
-                    'px-5 py-3.5 text-xs font-bold text-slate-500 uppercase tracking-wider',
+                    'px-5 py-3.5 text-xs font-bold text-white uppercase tracking-wider',
                     alignClass(col.align),
                     col.hideBelow === 'md' ? 'hidden md:table-cell' : '',
                     col.hideBelow === 'lg' ? 'hidden lg:table-cell' : '',
@@ -63,7 +63,7 @@ export function DataTable<T>({
                 </th>
               ))}
               {renderActions && (
-                <th className={`px-5 py-3.5 text-xs font-bold text-slate-500 uppercase tracking-wider ${alignClass(actionsAlign)}`}>
+                <th className={`px-5 py-3.5 text-xs font-bold text-white uppercase tracking-wider ${alignClass(actionsAlign)}`}>
                   Acciones
                 </th>
               )}
