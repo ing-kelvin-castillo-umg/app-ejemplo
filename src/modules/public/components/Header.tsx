@@ -3,8 +3,8 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 import { usePathname, useRouter } from 'next/navigation';
-import { useAuth } from '@/context/AuthContext';
-import { Wrench, User, LayoutDashboard, LogOut, Menu, X, Shield } from 'lucide-react';
+import { useAuth } from '@/modules/auth/context/AuthContext';
+import { Wrench, User, LayoutDashboard, LogOut, Menu, X } from 'lucide-react';
 
 export const Header: React.FC = () => {
   const pathname = usePathname();
@@ -54,7 +54,7 @@ export const Header: React.FC = () => {
           })}
         </nav>
 
-        {/* Acceso Discreto de Usuario / Icono de Perfil */}
+        {/* Acceso Discreto de Usuario */}
         <div className="hidden md:flex items-center space-x-3">
           {isAuthenticated && user ? (
             <div className="flex items-center space-x-3 bg-slate-50 border border-slate-200/80 p-1.5 pl-3 rounded-2xl">

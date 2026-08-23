@@ -1,5 +1,5 @@
-import usersData from '@/data/users.json';
-import { UserDTO } from '@/dtos/user.dto';
+import usersData from '@/shared/data/users.json';
+import { UserDTO } from '../dtos/user.dto';
 
 export class AuthService {
   /**
@@ -7,7 +7,7 @@ export class AuthService {
    * Devuelve un DTO o null si la autenticación falla.
    */
   static async login(email: string, pass: string): Promise<UserDTO | null> {
-    // Simula una ligera latencia asíncrona como si fuera una API externa
+    // Simula una ligera latencia asíncrona
     await new Promise((resolve) => setTimeout(resolve, 300));
 
     const foundUser = (usersData as UserDTO[]).find(

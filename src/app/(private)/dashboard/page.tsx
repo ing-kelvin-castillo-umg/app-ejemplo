@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import { useAuth } from '@/context/AuthContext';
+import { useAuth } from '@/modules/auth/context/AuthContext';
 import { Shield, User, Users, Truck, Package, ShoppingCart, AlertTriangle, ArrowUpRight } from 'lucide-react';
 import Link from 'next/link';
 
@@ -95,7 +95,7 @@ export default function DashboardPage() {
 
       </div>
 
-      {/* Acceso Rápido al Catálogo Privado */}
+      {/* Acceso Rápido al Catálogo */}
       <div className="bg-white rounded-3xl border border-slate-100 p-6 shadow-sm flex items-center justify-between">
         <div className="space-y-1">
           <h3 className="font-bold text-slate-900 text-sm">Catálogo & Stock en Tiempo Real</h3>

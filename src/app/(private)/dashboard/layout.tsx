@@ -3,7 +3,7 @@
 import React, { useEffect } from 'react';
 import Link from 'next/link';
 import { usePathname, useRouter } from 'next/navigation';
-import { useAuth } from '@/context/AuthContext';
+import { useAuth } from '@/modules/auth/context/AuthContext';
 import {
   Wrench,
   LayoutDashboard,
@@ -27,7 +27,6 @@ export default function DashboardLayout({
   const router = useRouter();
 
   useEffect(() => {
-    // Redirigir a inicio si no hay sesión activa
     if (!isAuthenticated) {
       router.push('/');
     }
@@ -157,8 +156,6 @@ export default function DashboardLayout({
 
       {/* Contenido Principal */}
       <div className="flex-1 flex flex-col overflow-hidden">
-        
-        {/* Header Superior Limpio */}
         <header className="h-16 bg-white border-b border-slate-100 px-6 flex items-center justify-between">
           <div className="flex items-center space-x-2">
             <span className="text-xs font-bold text-slate-700 capitalize">
@@ -168,7 +165,6 @@ export default function DashboardLayout({
         </header>
 
         <main className="p-6 overflow-y-auto flex-1">{children}</main>
-
       </div>
 
     </div>

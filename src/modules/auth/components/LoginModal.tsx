@@ -1,9 +1,9 @@
 'use client';
 
 import React, { useState } from 'react';
-import { useAuth } from '@/context/AuthContext';
+import { useAuth } from '../context/AuthContext';
 import { useRouter } from 'next/navigation';
-import { X, Lock, Mail, ShieldCheck, UserCheck, AlertCircle, Loader2 } from 'lucide-react';
+import { X, Lock, Mail, AlertCircle, Loader2 } from 'lucide-react';
 
 export const LoginModal: React.FC = () => {
   const { isLoginModalOpen, closeLoginModal, login, isLoading, loginError } = useAuth();

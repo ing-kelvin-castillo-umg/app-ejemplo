@@ -1,5 +1,5 @@
-import { UserDTO } from '@/dtos/user.dto';
-import { UserModel } from '@/models/user.model';
+import { UserDTO } from '../dtos/user.dto';
+import { UserModel } from '../models/user.model';
 
 export class UserAdapter {
   static toModel(dto: UserDTO): UserModel {

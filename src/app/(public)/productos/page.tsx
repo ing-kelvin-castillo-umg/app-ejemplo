@@ -1,9 +1,9 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
-import { ProductModel } from '@/models/product.model';
-import { ProductService } from '@/services/product.service';
-import { ProductAdapter } from '@/adapters/product.adapter';
+import { ProductModel } from '@/modules/products/models/product.model';
+import { ProductService } from '@/modules/products/services/product.service';
+import { ProductAdapter } from '@/modules/products/adapters/product.adapter';
 import { Search, Filter, Package, AlertTriangle, Loader2 } from 'lucide-react';
 
 export default function ProductosPage() {
@@ -15,9 +15,9 @@ export default function ProductosPage() {
   useEffect(() => {
     async function loadProducts() {
       setLoading(true);
-      // Capa Service (Trae DTOs)
+      // Capa Service del módulo products (Trae DTOs)
       const dtos = await ProductService.getProducts();
-      // Capa Adapter (Transforma DTOs -> Models)
+      // Capa Adapter del módulo products (Transforma DTOs -> Models)
       const models = ProductAdapter.toModelList(dtos);
       setProducts(models);
       setLoading(false);
@@ -47,10 +47,8 @@ export default function ProductosPage() {
         </p>
       </div>
 
-      {/* Barra de Filtros y Búsqueda */}
+      {/* Filtros */}
       <div className="flex flex-col md:flex-row items-center justify-between gap-4 p-4 bg-white rounded-2xl border border-slate-100 shadow-sm">
-        
-        {/* Input de Búsqueda */}
         <div className="relative w-full md:w-80">
           <Search className="w-4 h-4 absolute left-3 top-3 text-slate-400" />
           <input
@@ -62,7 +60,6 @@ export default function ProductosPage() {
           />
         </div>
 
-        {/* Categorías (Pills) */}
         <div className="flex items-center space-x-2 overflow-x-auto w-full md:w-auto pb-2 md:pb-0 scrollbar-none">
           <Filter className="w-4 h-4 text-slate-400 shrink-0 hidden sm:inline-block" />
           {categories.map((cat) => (
@@ -79,7 +76,6 @@ export default function ProductosPage() {
             </button>
           ))}
         </div>
-
       </div>
 
       {/* Grid de Productos */}
@@ -101,7 +97,6 @@ export default function ProductosPage() {
               key={product.id}
               className="group bg-white rounded-2xl border border-slate-100 shadow-sm hover:shadow-md transition-all overflow-hidden flex flex-col"
             >
-              {/* Imagen del Producto */}
               <div className="relative h-48 bg-slate-100 overflow-hidden">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
@@ -122,7 +117,6 @@ export default function ProductosPage() {
                 )}
               </div>
 
-              {/* Contenido del Producto */}
               <div className="p-5 flex-grow flex flex-col justify-between space-y-4">
                 <div className="space-y-1.5">
                   <div className="text-[11px] font-mono font-semibold text-slate-400">SKU: {product.sku}</div>
@@ -147,7 +141,6 @@ export default function ProductosPage() {
                   </div>
                 </div>
               </div>
-
             </div>
           ))}
         </div>

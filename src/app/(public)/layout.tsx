@@ -1,9 +1,9 @@
 'use client';
 
 import React from 'react';
-import { Header } from '@/components/public/Header';
-import { Footer } from '@/components/public/Footer';
-import { LoginModal } from '@/components/modals/LoginModal';
+import { Header } from '@/modules/public/components/Header';
+import { Footer } from '@/modules/public/components/Footer';
+import { LoginModal } from '@/modules/auth/components/LoginModal';
 
 export default function PublicLayout({
   children,

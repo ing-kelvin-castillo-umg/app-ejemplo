@@ -1,9 +1,9 @@
 'use client';
 
 import React, { createContext, useContext, useState, useEffect } from 'react';
-import { UserModel } from '@/models/user.model';
-import { AuthService } from '@/services/auth.service';
-import { UserAdapter } from '@/adapters/user.adapter';
+import { UserModel } from '../models/user.model';
+import { AuthService } from '../services/auth.service';
+import { UserAdapter } from '../adapters/user.adapter';
 
 interface AuthContextType {
   user: UserModel | null;

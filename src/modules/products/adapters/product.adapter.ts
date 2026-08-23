@@ -1,5 +1,5 @@
-import { ProductDTO } from '@/dtos/product.dto';
-import { ProductModel } from '@/models/product.model';
+import { ProductDTO } from '../dtos/product.dto';
+import { ProductModel } from '../models/product.model';
 
 export class ProductAdapter {
   static toModel(dto: ProductDTO): ProductModel {

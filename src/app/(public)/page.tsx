@@ -12,7 +12,6 @@ import {
   ChevronLeft,
   ChevronRight,
   Star,
-  CheckCircle2,
 } from 'lucide-react';
 
 const heroProducts = [
@@ -58,7 +57,6 @@ export default function HomePage() {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
 
-  // Carrusel automático cada 4 segundos
   useEffect(() => {
     if (isPaused) return;
     const interval = setInterval(() => {
@@ -87,7 +85,7 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
             
-            {/* Lado Izquierdo: Presentación y Título */}
+            {/* Presentación */}
             <div className="lg:col-span-6 space-y-6 text-center lg:text-left">
               <div className="inline-flex items-center space-x-2 px-3 py-1 bg-indigo-500/20 border border-indigo-400/30 rounded-full text-indigo-300 text-xs font-semibold">
                 <Wrench className="w-3.5 h-3.5" />
@@ -120,7 +118,6 @@ export default function HomePage() {
                 </Link>
               </div>
 
-              {/* Badges de Confianza */}
               <div className="pt-6 border-t border-slate-800 grid grid-cols-3 gap-2 text-center lg:text-left">
                 <div>
                   <span className="text-xl font-bold text-white block">+2,500</span>
@@ -137,7 +134,7 @@ export default function HomePage() {
               </div>
             </div>
 
-            {/* Lado Derecho: Carrusel interactivo novedoso de productos */}
+            {/* Carrusel interactivo */}
             <div
               className="lg:col-span-6 relative"
               onMouseEnter={() => setIsPaused(true)}
@@ -145,7 +142,6 @@ export default function HomePage() {
             >
               <div className="relative bg-white/10 backdrop-blur-md rounded-3xl p-4 sm:p-6 border border-white/15 shadow-2xl overflow-hidden transition-all">
                 
-                {/* Imagen del Slide */}
                 <div className="relative h-64 sm:h-80 w-full rounded-2xl overflow-hidden bg-slate-800">
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img
@@ -163,7 +159,6 @@ export default function HomePage() {
                     {activeProduct.category}
                   </span>
 
-                  {/* Info sobre la Imagen */}
                   <div className="absolute bottom-4 left-4 right-4 space-y-1">
                     <div className="flex items-center space-x-1 text-amber-400">
                       {[...Array(5)].map((_, i) => (
@@ -179,14 +174,12 @@ export default function HomePage() {
                   </div>
                 </div>
 
-                {/* Pie del Carrusel: Precio y Controles */}
                 <div className="mt-4 flex items-center justify-between">
                   <div>
                     <span className="text-[11px] text-slate-400 block uppercase font-semibold">Precio de Oferta</span>
                     <span className="text-2xl font-extrabold text-white">${activeProduct.price.toFixed(2)}</span>
                   </div>
 
-                  {/* Controles de Navegación del Carrusel */}
                   <div className="flex items-center space-x-3">
                     <div className="flex space-x-1.5 mr-2">
                       {heroProducts.map((_, idx) => (
@@ -222,10 +215,9 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Ventajas y Garantías */}
+      {/* Ventajas */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
-          
           <div className="p-6 bg-white rounded-2xl border border-slate-100 shadow-sm space-y-3">
             <div className="p-3 bg-indigo-50 text-indigo-600 rounded-xl w-fit">
               <Truck className="w-6 h-6" />
@@ -265,11 +257,9 @@ export default function HomePage() {
               Asesoramiento profesional para la elección adecuada de materiales.
             </p>
           </div>
-
         </div>
       </section>
 
-      {/* Sección Informativa Limpia */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="bg-slate-900 rounded-3xl p-8 sm:p-12 text-white flex flex-col md:flex-row items-center justify-between gap-8">
           <div className="space-y-3 text-center md:text-left">
