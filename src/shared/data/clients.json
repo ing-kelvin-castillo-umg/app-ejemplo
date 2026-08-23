@@ -48,5 +48,105 @@
     "nit": "5566778-0",
     "isActive": true,
     "createdAt": "2025-05-01T11:45:00Z"
+  },
+  {
+    "id": "c006",
+    "fullName": "Ana Patricia Morán",
+    "email": "ana.moran@empresa.com",
+    "phone": "4411-7722",
+    "address": "Zona 10, Guatemala",
+    "nit": "1122334-5",
+    "isActive": true,
+    "createdAt": "2025-05-15T09:00:00Z"
+  },
+  {
+    "id": "c007",
+    "fullName": "Distribuidora Centrocom",
+    "email": "ventas@centrocom.gt",
+    "phone": "2277-5533",
+    "address": "Calzada Aguilar Batres 42-10",
+    "nit": "6677889-0",
+    "isActive": true,
+    "createdAt": "2025-06-02T14:20:00Z"
+  },
+  {
+    "id": "c008",
+    "fullName": "José Miguel Recinos",
+    "email": "jose.recinos@gmail.com",
+    "phone": "5599-1234",
+    "address": "San José Pinula, Guatemala",
+    "nit": "4455667-8",
+    "isActive": false,
+    "createdAt": "2025-06-18T11:00:00Z"
+  },
+  {
+    "id": "c009",
+    "fullName": "Proyectos y Obras GT",
+    "email": "contacto@pyogt.com",
+    "phone": "2288-4400",
+    "address": "Zona 4, Guatemala",
+    "nit": "8899001-2",
+    "isActive": true,
+    "createdAt": "2025-07-05T08:00:00Z"
+  },
+  {
+    "id": "c010",
+    "fullName": "Luisa Fernanda Chávez",
+    "email": "luisa.chavez@hotmail.com",
+    "phone": "5577-9988",
+    "address": "Zona 11, Guatemala",
+    "nit": "3322110-9",
+    "isActive": true,
+    "createdAt": "2025-07-20T13:45:00Z"
+  },
+  {
+    "id": "c011",
+    "fullName": "Inversiones del Norte S.A.",
+    "email": "administracion@idelnorte.gt",
+    "phone": "2244-6688",
+    "address": "Santa Cruz del Quiché",
+    "nit": "7766554-3",
+    "isActive": true,
+    "createdAt": "2025-08-01T10:30:00Z"
+  },
+  {
+    "id": "c012",
+    "fullName": "Pedro Pablo Tzoc",
+    "email": "pedro.tzoc@gmail.com",
+    "phone": "4433-5566",
+    "address": "Chimaltenango, Guatemala",
+    "nit": "5544332-1",
+    "isActive": false,
+    "createdAt": "2025-08-10T09:00:00Z"
+  },
+  {
+    "id": "c013",
+    "fullName": "Grupo Constructor Altavista",
+    "email": "proyectos@altavista.com",
+    "phone": "2255-3311",
+    "address": "Zona 16, Guatemala",
+    "nit": "9988776-5",
+    "isActive": true,
+    "createdAt": "2025-08-18T15:00:00Z"
+  },
+  {
+    "id": "c014",
+    "fullName": "Silvia Beatriz Alvarado",
+    "email": "silvia.alvarado@yahoo.com",
+    "phone": "5566-4422",
+    "address": "Villa Nueva, Guatemala",
+    "nit": "2211009-8",
+    "isActive": true,
+    "createdAt": "2025-09-03T11:30:00Z"
+  },
+  {
+    "id": "c015",
+    "fullName": "Materiales y Acabados Express",
+    "email": "ventas@macexpress.gt",
+    "phone": "2299-7755",
+    "address": "Zona 12, Guatemala",
+    "nit": "6655443-2",
+    "isActive": true,
+    "createdAt": "2025-09-15T08:45:00Z"
   }
 ]

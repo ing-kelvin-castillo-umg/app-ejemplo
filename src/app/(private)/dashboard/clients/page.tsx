@@ -32,17 +32,21 @@ type ModalState =
 
 const PAGE_SIZE = 5;
 
-// ─── Definición de columnas ───────────────────────────────────────────────────
+// ─── Columnas ─────────────────────────────────────────────────────────────────
 const columns: TableColumn<ClientModel>[] = [
   {
     key: 'name',
     header: 'Cliente',
     render: (c) => (
-      <div>
+      <div className="space-y-0.5">
         <p className="font-semibold text-slate-900 text-sm">{c.fullName}</p>
-        <p className="text-xs text-slate-400 flex items-center space-x-1 mt-0.5">
+        <p className="text-xs text-slate-400 flex items-center space-x-1">
           <MapPin className="w-3 h-3 shrink-0" />
           <span className="truncate max-w-[160px]">{c.address}</span>
+        </p>
+        <p className="text-xs text-slate-400 flex items-center space-x-1">
+          <FileText className="w-3 h-3 shrink-0" />
+          <span>NIT: {c.nit}</span>
         </p>
       </div>
     ),
@@ -61,17 +65,6 @@ const columns: TableColumn<ClientModel>[] = [
           <span>{c.phone}</span>
         </p>
       </div>
-    ),
-  },
-  {
-    key: 'nit',
-    header: 'NIT',
-    hideBelow: 'lg',
-    render: (c) => (
-      <span className="flex items-center space-x-1.5 text-xs text-slate-600">
-        <FileText className="w-3 h-3 text-slate-400 shrink-0" />
-        <span>{c.nit}</span>
-      </span>
     ),
   },
   {
@@ -95,20 +88,17 @@ export default function ClientsPage() {
     setCurrentPage(1);
   }, []);
 
-  // Filtrado
   const filtered = useMemo(
     () => (search.trim() ? ClientService.search(search) : clients),
     [search, clients]
   );
 
-  // Paginación
   const totalPages = Math.ceil(filtered.length / PAGE_SIZE);
   const paginated = useMemo(
     () => filtered.slice((currentPage - 1) * PAGE_SIZE, currentPage * PAGE_SIZE),
     [filtered, currentPage]
   );
 
-  // Resetear página al buscar
   const handleSearch = (value: string) => {
     setSearch(value);
     setCurrentPage(1);
@@ -134,7 +124,6 @@ export default function ClientsPage() {
     setModal({ type: 'closed' });
   };
 
-  // Slot de acciones por fila
   const renderActions = (client: ClientModel) => (
     <>
       <ToggleStatusButton
@@ -191,7 +180,6 @@ export default function ClientsPage() {
         totalItems={filtered.length}
       />
 
-      {/* Modal crear / editar */}
       {(modal.type === 'create' || modal.type === 'edit') && (
         <ClientModal
           mode={modal.type}
@@ -202,7 +190,6 @@ export default function ClientsPage() {
         />
       )}
 
-      {/* Modal confirmar eliminación */}
       {modal.type === 'delete' && (
         <ConfirmModal
           title="Eliminar Cliente"
