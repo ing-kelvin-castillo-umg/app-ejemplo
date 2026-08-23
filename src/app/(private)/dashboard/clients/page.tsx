@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useCallback } from 'react';
+import React, { useState, useCallback, useMemo } from 'react';
 import { Users, Pencil, Trash2, Mail, Phone, MapPin, FileText } from 'lucide-react';
 
 import { ClientService } from '@/modules/clients/services/client.service';
@@ -13,6 +13,7 @@ import { DataTable, TableColumn } from '@/shared/components/DataTable';
 import { StatusBadge } from '@/shared/components/StatusBadge';
 import { ToggleStatusButton } from '@/shared/components/ToggleStatusButton';
 import { ConfirmModal } from '@/shared/components/ConfirmModal';
+import { Pagination } from '@/shared/components/Pagination';
 
 interface ClientFormData {
   fullName: string;
@@ -29,6 +30,8 @@ type ModalState =
   | { type: 'edit'; client: ClientModel }
   | { type: 'delete'; client: ClientModel };
 
+const PAGE_SIZE = 5;
+
 // ─── Definición de columnas ───────────────────────────────────────────────────
 const columns: TableColumn<ClientModel>[] = [
   {
@@ -39,7 +42,7 @@ const columns: TableColumn<ClientModel>[] = [
         <p className="font-semibold text-slate-900 text-sm">{c.fullName}</p>
         <p className="text-xs text-slate-400 flex items-center space-x-1 mt-0.5">
           <MapPin className="w-3 h-3 shrink-0" />
-          <span className="truncate max-w-[180px]">{c.address}</span>
+          <span className="truncate max-w-[160px]">{c.address}</span>
         </p>
       </div>
     ),
@@ -47,7 +50,6 @@ const columns: TableColumn<ClientModel>[] = [
   {
     key: 'contact',
     header: 'Contacto',
-    hideBelow: 'md',
     render: (c) => (
       <div className="space-y-0.5">
         <p className="text-xs text-slate-600 flex items-center space-x-1.5">
@@ -75,6 +77,7 @@ const columns: TableColumn<ClientModel>[] = [
   {
     key: 'status',
     header: 'Estado',
+    align: 'center',
     render: (c) => <StatusBadge isActive={c.isActive} />,
   },
 ];
@@ -83,12 +86,33 @@ const columns: TableColumn<ClientModel>[] = [
 export default function ClientsPage() {
   const [clients, setClients] = useState<ClientModel[]>(ClientService.getAll());
   const [search, setSearch] = useState('');
+  const [currentPage, setCurrentPage] = useState(1);
   const [modal, setModal] = useState<ModalState>({ type: 'closed' });
   const [isSaving, setIsSaving] = useState(false);
 
-  const refresh = useCallback(() => setClients(ClientService.getAll()), []);
+  const refresh = useCallback(() => {
+    setClients(ClientService.getAll());
+    setCurrentPage(1);
+  }, []);
 
-  const filtered = search.trim() ? ClientService.search(search) : clients;
+  // Filtrado
+  const filtered = useMemo(
+    () => (search.trim() ? ClientService.search(search) : clients),
+    [search, clients]
+  );
+
+  // Paginación
+  const totalPages = Math.ceil(filtered.length / PAGE_SIZE);
+  const paginated = useMemo(
+    () => filtered.slice((currentPage - 1) * PAGE_SIZE, currentPage * PAGE_SIZE),
+    [filtered, currentPage]
+  );
+
+  // Resetear página al buscar
+  const handleSearch = (value: string) => {
+    setSearch(value);
+    setCurrentPage(1);
+  };
 
   const handleSave = (data: ClientFormData) => {
     setIsSaving(true);
@@ -146,16 +170,25 @@ export default function ClientsPage() {
 
       <SearchBar
         value={search}
-        onChange={setSearch}
+        onChange={handleSearch}
         placeholder="Buscar por nombre, NIT, email o teléfono..."
       />
 
       <DataTable
-        data={filtered}
+        data={paginated}
         columns={columns}
         keyExtractor={(c) => c.id}
         renderActions={renderActions}
+        actionsAlign="center"
         emptyMessage="No se encontraron clientes."
+      />
+
+      <Pagination
+        currentPage={currentPage}
+        totalPages={totalPages}
+        onPageChange={setCurrentPage}
+        itemsPerPage={PAGE_SIZE}
+        totalItems={filtered.length}
       />
 
       {/* Modal crear / editar */}
