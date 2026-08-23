@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { AuthProvider } from '@/modules/auth/context/AuthContext';
+import { LoginModal } from '@/modules/auth/components/LoginModal';
 import './globals.css';
 
 export const metadata: Metadata = {
@@ -14,8 +15,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="es">
-      <body className="bg-slate-50 text-slate-900 min-h-screen flex flex-col antialiased">
-        <AuthProvider>{children}</AuthProvider>
+      <body className="bg-slate-50 text-slate-900 min-h-screen antialiased">
+        <AuthProvider>
+          {children}
+          <LoginModal />
+        </AuthProvider>
       </body>
     </html>
   );
