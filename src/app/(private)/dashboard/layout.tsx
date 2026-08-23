@@ -55,9 +55,9 @@ export default function DashboardLayout({
 
   const menuItems = [
     { name: 'Resumen', href: '/dashboard', icon: LayoutDashboard, roles: ['ADMIN', 'LIMITED'] },
-    { name: 'Clientes', href: '/dashboard/clientes', icon: Users, roles: ['ADMIN', 'LIMITED'] },
-    { name: 'Proveedores', href: '/dashboard/proveedores', icon: Truck, roles: ['ADMIN'] },
-    { name: 'Inventario', href: '/dashboard/productos', icon: Package, roles: ['ADMIN', 'LIMITED'] },
+    { name: 'Clientes', href: '/dashboard/clients', icon: Users, roles: ['ADMIN', 'LIMITED'] },
+    { name: 'Proveedores', href: '/dashboard/suppliers', icon: Truck, roles: ['ADMIN'] },
+    { name: 'Inventario', href: '/dashboard/products', icon: Package, roles: ['ADMIN', 'LIMITED'] },
   ];
 
   return (
@@ -67,7 +67,6 @@ export default function DashboardLayout({
       <aside className="w-full md:w-64 bg-white border-r border-slate-100 flex flex-col justify-between shrink-0">
         
         <div className="p-6 space-y-6">
-          {/* Logo */}
           <Link href="/dashboard" className="flex items-center space-x-2.5">
             <div className="p-2 bg-indigo-600 text-white rounded-xl shadow-sm">
               <Wrench className="w-5 h-5" />
@@ -78,7 +77,6 @@ export default function DashboardLayout({
             </div>
           </Link>
 
-          {/* Menú de Navegación */}
           <nav className="space-y-1">
             <div className="text-[10px] font-bold text-slate-400 uppercase tracking-wider px-3 mb-2">
               Gestión
@@ -122,7 +120,6 @@ export default function DashboardLayout({
           </nav>
         </div>
 
-        {/* User Info & Cerrar Sesión */}
         <div className="p-4 border-t border-slate-100 bg-slate-50/50 space-y-3">
           <div className="flex items-center space-x-3">
             <div className="p-2 bg-indigo-100 text-indigo-700 rounded-xl">
@@ -154,7 +151,6 @@ export default function DashboardLayout({
 
       </aside>
 
-      {/* Contenido Principal */}
       <div className="flex-1 flex flex-col overflow-hidden">
         <header className="h-16 bg-white border-b border-slate-100 px-6 flex items-center justify-between">
           <div className="flex items-center space-x-2">

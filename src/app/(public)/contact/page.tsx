@@ -3,14 +3,14 @@
 import React, { useState } from 'react';
 import { Mail, Phone, MapPin, Send, CheckCircle2, Clock } from 'lucide-react';
 
-export default function ContactoPage() {
+export default function ContactPage() {
   const [submitted, setSubmitted] = useState(false);
   const [formData, setFormData] = useState({
-    nombre: '',
+    name: '',
     email: '',
-    telefono: '',
-    asunto: 'Cotización de Materiales',
-    mensaje: '',
+    phone: '',
+    subject: 'Cotización de Materiales',
+    message: '',
   });
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -21,7 +21,6 @@ export default function ContactoPage() {
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-12">
       
-      {/* Header */}
       <div className="text-center max-w-2xl mx-auto space-y-3">
         <h1 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
           Contacto y Cotizaciones
@@ -33,7 +32,6 @@ export default function ContactoPage() {
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
         
-        {/* Información de Contacto (Tarjetas) */}
         <div className="space-y-4 lg:col-span-1">
           <div className="p-6 bg-white rounded-2xl border border-slate-100 shadow-sm flex items-start space-x-4">
             <div className="p-3 bg-indigo-50 text-indigo-600 rounded-xl shrink-0">
@@ -77,7 +75,6 @@ export default function ContactoPage() {
           </div>
         </div>
 
-        {/* Formulario de Contacto */}
         <div className="lg:col-span-2 bg-white rounded-3xl border border-slate-100 p-8 shadow-sm">
           {submitted ? (
             <div className="text-center py-12 space-y-4">
@@ -105,8 +102,8 @@ export default function ContactoPage() {
                   <input
                     type="text"
                     required
-                    value={formData.nombre}
-                    onChange={(e) => setFormData({ ...formData, nombre: e.target.value })}
+                    value={formData.name}
+                    onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                     placeholder="Ej. Juan Pérez"
                     className="w-full px-4 py-2.5 text-sm bg-slate-50 border border-slate-200 rounded-xl text-slate-900 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:bg-white transition-all"
                   />
@@ -130,8 +127,8 @@ export default function ContactoPage() {
                   <label className="text-xs font-semibold text-slate-700">Teléfono</label>
                   <input
                     type="tel"
-                    value={formData.telefono}
-                    onChange={(e) => setFormData({ ...formData, telefono: e.target.value })}
+                    value={formData.phone}
+                    onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                     placeholder="+502 5555-0000"
                     className="w-full px-4 py-2.5 text-sm bg-slate-50 border border-slate-200 rounded-xl text-slate-900 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:bg-white transition-all"
                   />
@@ -140,8 +137,8 @@ export default function ContactoPage() {
                 <div className="space-y-1">
                   <label className="text-xs font-semibold text-slate-700">Asunto</label>
                   <select
-                    value={formData.asunto}
-                    onChange={(e) => setFormData({ ...formData, asunto: e.target.value })}
+                    value={formData.subject}
+                    onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
                     className="w-full px-4 py-2.5 text-sm bg-slate-50 border border-slate-200 rounded-xl text-slate-900 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:bg-white transition-all"
                   >
                     <option>Cotización de Materiales</option>
@@ -157,8 +154,8 @@ export default function ContactoPage() {
                 <textarea
                   rows={4}
                   required
-                  value={formData.mensaje}
-                  onChange={(e) => setFormData({ ...formData, mensaje: e.target.value })}
+                  value={formData.message}
+                  onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                   placeholder="Detalla los productos o cantidades que necesitas..."
                   className="w-full px-4 py-2.5 text-sm bg-slate-50 border border-slate-200 rounded-xl text-slate-900 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:bg-white transition-all"
                 ></textarea>

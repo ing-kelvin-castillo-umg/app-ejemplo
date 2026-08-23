@@ -10,7 +10,7 @@ export const Footer: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           
-          {/* Columna 1: Info Ferretería */}
+          {/* Columna 1 */}
           <div className="space-y-4">
             <div className="flex items-center space-x-2">
               <div className="p-2 bg-indigo-600 text-white rounded-xl">
@@ -23,7 +23,7 @@ export const Footer: React.FC = () => {
             </p>
           </div>
 
-          {/* Columna 2: Enlaces Rápidos */}
+          {/* Columna 2 */}
           <div>
             <h4 className="text-white font-semibold mb-4 text-sm">Navegación</h4>
             <ul className="space-y-2 text-xs">
@@ -31,18 +31,18 @@ export const Footer: React.FC = () => {
                 <Link href="/" className="hover:text-indigo-400 transition-colors">Inicio</Link>
               </li>
               <li>
-                <Link href="/nosotros" className="hover:text-indigo-400 transition-colors">Nosotros</Link>
+                <Link href="/about" className="hover:text-indigo-400 transition-colors">Nosotros</Link>
               </li>
               <li>
-                <Link href="/productos" className="hover:text-indigo-400 transition-colors">Catálogo de Productos</Link>
+                <Link href="/products" className="hover:text-indigo-400 transition-colors">Catálogo de Productos</Link>
               </li>
               <li>
-                <Link href="/contacto" className="hover:text-indigo-400 transition-colors">Contacto</Link>
+                <Link href="/contact" className="hover:text-indigo-400 transition-colors">Contacto</Link>
               </li>
             </ul>
           </div>
 
-          {/* Columna 3: Categorías Principales */}
+          {/* Columna 3 */}
           <div>
             <h4 className="text-white font-semibold mb-4 text-sm">Categorías</h4>
             <ul className="space-y-2 text-xs">
@@ -54,7 +54,7 @@ export const Footer: React.FC = () => {
             </ul>
           </div>
 
-          {/* Columna 4: Contacto */}
+          {/* Columna 4 */}
           <div>
             <h4 className="text-white font-semibold mb-4 text-sm">Atención al Cliente</h4>
             <ul className="space-y-2 text-xs">

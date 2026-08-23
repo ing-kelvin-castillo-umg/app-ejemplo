@@ -3,18 +3,17 @@ import { UserDTO } from '../dtos/user.dto';
 
 export class AuthService {
   /**
-   * Valida las credenciales contra la fuente de datos (users.json).
-   * Devuelve un DTO o null si la autenticación falla.
+   * Validates user credentials against data source.
+   * Returns UserDTO or null if authentication fails.
    */
   static async login(email: string, pass: string): Promise<UserDTO | null> {
-    // Simula una ligera latencia asíncrona
     await new Promise((resolve) => setTimeout(resolve, 300));
 
     const foundUser = (usersData as UserDTO[]).find(
-      (u) => u.usr_email.toLowerCase() === email.toLowerCase() && u.usr_pass === pass
+      (u) => u.email.toLowerCase() === email.toLowerCase() && u.password === pass
     );
 
-    if (!foundUser || !foundUser.usr_is_active) {
+    if (!foundUser || !foundUser.isActive) {
       return null;
     }
 

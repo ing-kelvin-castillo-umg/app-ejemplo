@@ -78,14 +78,13 @@ export default function HomePage() {
   return (
     <div className="space-y-16 pb-16">
       
-      {/* Hero Section Principal con Carrusel Dinámico de Productos */}
+      {/* Hero Section */}
       <section className="relative bg-gradient-to-br from-slate-900 via-slate-900 to-indigo-950 text-white overflow-hidden py-12 lg:py-20">
         <div className="absolute inset-0 bg-[radial-gradient(#4f46e5_1px,transparent_1px)] [background-size:24px_24px] opacity-15"></div>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
             
-            {/* Presentación */}
             <div className="lg:col-span-6 space-y-6 text-center lg:text-left">
               <div className="inline-flex items-center space-x-2 px-3 py-1 bg-indigo-500/20 border border-indigo-400/30 rounded-full text-indigo-300 text-xs font-semibold">
                 <Wrench className="w-3.5 h-3.5" />
@@ -103,7 +102,7 @@ export default function HomePage() {
 
               <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start space-y-3 sm:space-y-0 sm:space-x-4 pt-2">
                 <Link
-                  href="/productos"
+                  href="/products"
                   className="w-full sm:w-auto px-7 py-3.5 bg-indigo-600 hover:bg-indigo-500 text-white font-semibold rounded-xl shadow-lg hover:shadow-indigo-500/30 transition-all flex items-center justify-center space-x-2"
                 >
                   <span>Ver Catálogo Completo</span>
@@ -111,7 +110,7 @@ export default function HomePage() {
                 </Link>
 
                 <Link
-                  href="/contacto"
+                  href="/contact"
                   className="w-full sm:w-auto px-7 py-3.5 bg-white/10 hover:bg-white/20 border border-white/20 text-white font-semibold rounded-xl transition-all text-center"
                 >
                   Solicitar Cotización
@@ -134,7 +133,7 @@ export default function HomePage() {
               </div>
             </div>
 
-            {/* Carrusel interactivo */}
+            {/* Carrusel */}
             <div
               className="lg:col-span-6 relative"
               onMouseEnter={() => setIsPaused(true)}
@@ -271,7 +270,7 @@ export default function HomePage() {
             </p>
           </div>
           <Link
-            href="/contacto"
+            href="/contact"
             className="shrink-0 px-7 py-3.5 bg-indigo-600 hover:bg-indigo-500 text-white font-semibold rounded-xl transition-all shadow-md"
           >
             Contactar Asesor

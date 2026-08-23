@@ -6,7 +6,7 @@ import { ProductService } from '@/modules/products/services/product.service';
 import { ProductAdapter } from '@/modules/products/adapters/product.adapter';
 import { Search, Filter, Package, AlertTriangle, Loader2 } from 'lucide-react';
 
-export default function ProductosPage() {
+export default function ProductsPage() {
   const [products, setProducts] = useState<ProductModel[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
   const [search, setSearch] = useState<string>('');
@@ -15,9 +15,7 @@ export default function ProductosPage() {
   useEffect(() => {
     async function loadProducts() {
       setLoading(true);
-      // Capa Service del módulo products (Trae DTOs)
       const dtos = await ProductService.getProducts();
-      // Capa Adapter del módulo products (Transforma DTOs -> Models)
       const models = ProductAdapter.toModelList(dtos);
       setProducts(models);
       setLoading(false);

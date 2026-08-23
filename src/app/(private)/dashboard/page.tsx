@@ -13,7 +13,7 @@ export default function DashboardPage() {
   return (
     <div className="space-y-8">
       
-      {/* Encabezado Principal de Bienvenida */}
+      {/* Encabezado Principal */}
       <div className="bg-gradient-to-r from-slate-900 via-slate-900 to-indigo-950 text-white rounded-3xl p-8 shadow-sm flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
         <div className="space-y-2">
           <div className="inline-flex items-center space-x-2 px-3 py-1 bg-indigo-500/20 border border-indigo-400/30 rounded-full text-indigo-300 text-xs font-semibold">
@@ -31,7 +31,7 @@ export default function DashboardPage() {
         </div>
       </div>
 
-      {/* Tarjetas de Métricas Principales (KPIs) */}
+      {/* Tarjetas de Métricas (KPIs) */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
         
         <div className="p-6 bg-white rounded-2xl border border-slate-100 shadow-sm space-y-3">
@@ -104,7 +104,7 @@ export default function DashboardPage() {
           </p>
         </div>
         <Link
-          href="/productos"
+          href="/products"
           className="flex items-center space-x-1.5 px-4 py-2 bg-indigo-600 text-white text-xs font-semibold rounded-xl hover:bg-indigo-700 transition-all shrink-0"
         >
           <span>Ver Productos</span>
